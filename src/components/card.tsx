@@ -2,7 +2,7 @@ import React from 'react';
 import './card.css';
 
 interface CardProps {
-    id: string;
+    id: number;
     text: string;
     state: boolean; // true = completed, false = not completed
 }

@@ -9,6 +9,8 @@
     border: none;
     padding-left: 10px;
     padding-right: 10px;
+    padding-bottom: 0;
+    padding-top: 0;
 }
 
 .inputTask:focus {
@@ -38,4 +40,9 @@
     height: 100%;
     background-color: #303030;
     color: white;
+}
+
+.inputBox {
+    display: inline-flex;
+    justify-content: space-between;
 }
