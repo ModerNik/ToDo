@@ -5,6 +5,10 @@ import {Card} from './components/card';
 let cardsCounter = 0;
 
 function App() {
+    const addTask = () => {
+
+    }
+
     return (
         <div>
             <h1>ModerNik's ToDo</h1>
@@ -13,8 +17,8 @@ function App() {
                     <input className='inputTask' type="text" placeholder="Add a new task" />
                     <button className='confirmButton'>ADD</button>
                 </div>
-                <Card id={cardsCounter} text='123' state={false}></Card>
-                <Card id='2' text='123' state={false}></Card>
+                <Card cardID={cardsCounter} text='123' state={false}></Card>
+                <Card cardID={cardsCounter} text='123' state={false}></Card>
             </div>
         </div>
     );
