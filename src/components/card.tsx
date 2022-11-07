@@ -2,13 +2,13 @@ import React from 'react';
 import { isConditionalExpression } from 'typescript';
 import './card.css';
 
-interface CardProps {
+interface cardProps {
     cardID: number;
     text: string;
     state: boolean; // true = completed, false = not completed
 }
 
-export function Card({ cardID, text, state }: CardProps) {
+export const Card: React.FC<cardProps> = ({ cardID, text, state }) => {
     return (
         <div className='card' key={cardID}>
             <div className='textBox'>
