@@ -5,9 +5,12 @@
 
 .appName {
     width: 100%;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .mainBox {
+    min-width: 200px;
     text-align: center;
     justify-content: center;
     max-width: 30vmin;
