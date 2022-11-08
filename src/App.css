@@ -3,32 +3,14 @@
     justify-content: center;
 }
 
-.inputTask {
-    height: 30px;
-    border-radius: 5px;
-    border: none;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 0;
-    padding-top: 0;
+.appName {
+    width: 100%;
 }
 
-.inputTask:focus {
-    outline: none;
-}
-
-.confirmButton {
-    height: 30px;
-    border-radius: 5px;
-    border: none;
-    padding-left: 10px;
-    padding-right: 10px;
-    transition: 300ms;
-}
-
-.confirmButton:hover {
-    background-color: bisque;
-    transition: 300ms;
+.mainBox {
+    text-align: center;
+    justify-content: center;
+    max-width: 30vmin;
 }
 
 .bodyBox {
@@ -44,4 +26,35 @@
 .inputBox {
     display: inline-flex;
     justify-content: space-between;
+}
+
+.inputTask {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0;
+    padding-top: 0;
+    margin-right: 10px;
+}
+
+.inputTask:focus {
+    outline: none;
+}
+
+.confirmButton {
+    width: min-content;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: 300ms;
+}
+
+.confirmButton:hover {
+    background-color: bisque;
+    transition: 300ms;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import './card.css';
 
 const BLACK = '#000000'
-const LIGHT_GRAY = '#858A7E'
+const LIGHT_GRAY = '#00000060'
 
 interface cardProps {
     cardID: number;
@@ -15,8 +15,8 @@ interface cardProps {
 export const Card: React.FC<cardProps> = ({ cardID, text, state, deleteTask, changeState}) => {
     return (
         <div className='card' key={cardID} onClick={() => changeState(cardID)}>
-            <div style={{textDecoration : state ? 'line-through' : 'none', color : state ? LIGHT_GRAY : BLACK}}>{text}</div>
-            <button onClick={(e) => {e.stopPropagation(); deleteTask(cardID)}} className='deleteButton'/>
+            <div style={{textDecoration : state ? 'line-through' : 'none', color : state ? LIGHT_GRAY : BLACK, transition : '300ms'}}>{text}</div>
+            <button onClick={(e) => {e.stopPropagation(); deleteTask(cardID)}} className="gg-close-r"/>
         </div>
     );
 }

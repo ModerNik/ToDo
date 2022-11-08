@@ -46,7 +46,7 @@ function App() {
     }
 
     return (
-        <div>
+        <div className='mainBox'>
             <h1>ModerNik's ToDo</h1>
             <div className='bodyBox'>
                 <form onSubmit={addTask} className='inputBox'>
