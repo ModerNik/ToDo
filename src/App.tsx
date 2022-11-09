@@ -47,7 +47,7 @@ function App() {
 
     return (
         <div className='mainBox'>
-            <h1>ModerNik's ToDo</h1>
+            <h1 className='appName'>ModerNik's ToDo</h1>
             <div className='bodyBox'>
                 <form onSubmit={addTask} className='inputBox'>
                     <input className='inputTask' type="text" placeholder="Add a new task"
