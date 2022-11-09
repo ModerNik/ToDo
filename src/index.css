@@ -11,17 +11,17 @@ body {
     justify-content: center;
 }
 
-@media (min-width: 320px) and (max-width: 999px) {
+@media (min-width: 320px) and (max-width: 599px) {
     body {
         zoom: 1;
     }
-  }
-  
-  @media (min-width: 1000px) {
+}
+
+@media (min-width: 600px) {
     body {
         zoom: 2;
     }
-  }
+}
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

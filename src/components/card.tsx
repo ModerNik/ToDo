@@ -12,11 +12,11 @@ interface cardProps {
     changeState: (id: cardProps['cardID']) => void
 }
 
-export const Card: React.FC<cardProps> = ({ cardID, text, state, deleteTask, changeState}) => {
+export const Card: React.FC<cardProps> = ({ cardID, text, state, deleteTask, changeState }) => {
     return (
         <div className='card' key={cardID} onClick={() => changeState(cardID)}>
-            <div style={{textDecoration : state ? 'line-through' : 'none', color : state ? LIGHT_GRAY : BLACK, transition : '300ms'}}>{text}</div>
-            <button onClick={(e) => {e.stopPropagation(); deleteTask(cardID)}} className="gg-close-r"/>
+            <div style={{ textDecoration: state ? 'line-through' : 'none', color: state ? LIGHT_GRAY : BLACK, transition: '300ms' }}>{text}</div>
+            <button onClick={(e) => { e.stopPropagation(); deleteTask(cardID) }} className="gg-close-r" />
         </div>
     );
 }

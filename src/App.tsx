@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { Card } from './components/card';
 
-let cardsCounter = 1;
+let cardsCounter = 0;
 
 export type cardProps = {
     cardID: number;
@@ -11,22 +11,33 @@ export type cardProps = {
 }
 
 function App() {
-
     const [cards, setCards] = useState<cardProps[]>([]);
     const [inputText, setText] = useState('');
+
+    useEffect(() => {
+        const cardsParser = JSON.parse(localStorage.getItem('cards') || '[]');
+        cardsCounter = JSON.parse(localStorage.getItem('cardsCounter') || '0');
+        console.log('cardsCounter', cardsCounter);
+        console.log(cardsParser);
+        if (cardsParser) {
+            cardsParser.map((card: cardProps) => {
+                setCards((cards) => [...cards, card]);
+                console.log(card);
+            })
+        }
+        console.log(cards, 'cards');
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem('cards', JSON.stringify(cards));
+        localStorage.setItem('cardsCounter', JSON.stringify(cardsCounter));
+    }, [cards]);
 
     const addTask = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (inputText) {
             setText('');
-            setCards([
-                ...cards,
-                {
-                    cardID: cardsCounter++,
-                    text: inputText,
-                    state: false
-                }
-            ])
+            setCards([...cards, { cardID: ++cardsCounter, text: inputText, state: false }]);
         }
     }
 
