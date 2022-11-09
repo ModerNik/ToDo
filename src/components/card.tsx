@@ -19,8 +19,8 @@ export const Card: React.FC<cardProps> = ({ cardID, text, state, deleteTask, cha
         <div className='card' key={cardID} onClick={() => changeState(cardID)}>
             <div style={{ textDecoration: state ? 'line-through' : 'none', color: state ? LIGHT_GRAY : BLACK, transition: '300ms' }}>{text}</div>
             <div className='buttonsBox'>
-                <button onClick={(e) => { e.stopPropagation(); editTask(cardID) }} className="material-symbols-outlined">edit</button>
-                <button onClick={(e) => { e.stopPropagation(); deleteTask(cardID) }} className="material-symbols-outlined">delete_forever</button>
+                <button onClick={(e) => { e.stopPropagation(); editTask(cardID) }} className="material-symbols-outlined" style={{color: state ? LIGHT_GRAY : BLACK, transition: '300ms'}} >edit</button>
+                <button onClick={(e) => { e.stopPropagation(); deleteTask(cardID) }} className="material-symbols-outlined" style={{color: state ? LIGHT_GRAY : BLACK, transition: '300ms'}}>delete_forever</button>
             </div>
         </div>
     );
