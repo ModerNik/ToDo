@@ -45,6 +45,18 @@ function App() {
         setCards(cards.filter((card) => card.cardID !== id));
     }
 
+    const editTask = (id: cardProps['cardID']) => {
+        setCards(
+            cards.map((card) => {
+                if (card.cardID === id) {
+                    card.text = prompt('Edit task', card.text) || card.text;
+                }
+                return card;
+            })
+        );
+    }
+
+
     const changeState = (id: cardProps['cardID']) => {
         setCards(
             cards.map((card) => {
@@ -56,9 +68,14 @@ function App() {
         );
     }
 
+    const clearAll = () => {
+        setCards([]);
+        cardsCounter = 0;
+    }
+
     return (
         <div className='mainBox'>
-            <h1 className='appName'>ModerNik's ToDo</h1>
+            <h2 className='appName'>ModerNik's ToDo</h2>
             <div className='bodyBox'>
                 <form onSubmit={addTask} className='inputBox'>
                     <input className='inputTask' type="text" placeholder="Add a new task"
@@ -67,10 +84,11 @@ function App() {
                 </form>
                 <div>
                     {cards.map((card) => (
-                        <Card key={card.cardID} cardID={card.cardID} text={card.text} state={card.state} deleteTask={deleteTask} changeState={changeState} />
+                        <Card key={card.cardID} cardID={card.cardID} text={card.text} state={card.state} deleteTask={deleteTask} changeState={changeState} editTask={editTask}/>
                     ))}
                 </div>
             </div>
+            <button onClick={clearAll} style={{color: 'red', backgroundColor: '#303030', marginTop: '10px'}} className="material-symbols-outlined">delete_forever</button>
         </div>
     );
 }
